@@ -1,0 +1,21 @@
+{
+  "name": "referencing-profiler",
+  "version": "1.0.1",
+  "description": "extention to referencing-database to allow for easy user profiles",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "profile",
+    "manager",
+    "database",
+    "referencing"
+  ],
+  "author": "Ajani James Bilby",
+  "license": "ISC",
+  "repository": "https://github.com/Hobgoblin101/referencing-profiler",
+  "dependencies": {
+    "referencing-database": "^1.0.0"
+  }
+}
