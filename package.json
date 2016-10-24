@@ -1,6 +1,6 @@
 {
   "name": "referencing-profiler",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "extention to referencing-database to allow for easy user profiles",
   "main": "index.js",
   "scripts": {
