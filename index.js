@@ -21,9 +21,9 @@ var defualtUser = {
 
 
 //Setup profile defualts
-if (fs.readdirSync("./database/").err === null){
+if (typeof(fs.readdirSync("./database/")) == "object"){
     var folderData = fs.readdirSync("./database/templates");
-    if (folderData.err === null){
+    if (typeof(folderData) == "object"){
       //Dose profile template exist?
       if (folderData.indexOf("profile") == -1){
         fs.writeFileSync("./database/templates/profile.json", JSON.stringify(defualtUser, null, 2));
@@ -67,9 +67,9 @@ module.exports = {
 
     //Check if both Encrypted passwords are the same
     if (userData.password.hash.toString() === hash.toString()) {
-      return {valid: true, err: null};
+      return {valid: true, err: null, username: username};
     }else{
-      return {valid: false, err: "invalid login"};
+      return {valid: false, err: "invalid login", username: username};
     }
 
   },
@@ -94,7 +94,7 @@ module.exports = {
     }
 
     //return if process was successful
-    return newUser.successful;
+    return newUser;
   },
   get: function(id){
     if (database.exist('profile', id)){
