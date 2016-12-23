@@ -40,9 +40,6 @@ if (typeof(fs.readdirSync("./database/")) == "object"){
 module.exports = {
   login: function(username, password){
 
-    //Remove special characters
-    username = username.replace(/[!@#$%^&*]/g, '');
-
     //Check is username, password, and profile exist and are valid
     if (!username || !password){
       return {valid: false, err: "invalid login"};
@@ -74,9 +71,6 @@ module.exports = {
 
   },
   new: function(username, password){
-
-    //Remove special characters
-    username = username.replace(/[!@#$%^&*]/g, '');
 
     //Check is username, password, and profile are valid and don't exist
     if (!username || !password || database.exist("profile", username)) {
